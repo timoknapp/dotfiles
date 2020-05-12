@@ -12,6 +12,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
+set -x
 
 # Set computer name (as done via System Preferences → Sharing)
 #sudo scutil --set HostName "$COMPUTER_NAME"
@@ -127,7 +128,16 @@ defaults write com.apple.BezelServices kDimTime -int 300
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Follow the keyboard focus while zoomed in
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
+#defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
+
+###############################################################################
+# Touchbar                                                            #
+###############################################################################
+echo -n "Change Touchbar"
+defaults write com.apple.touchbar.agent 'PresentationModeFnModes = {functionKeys = app;};'
+defaults write com.apple.touchbar.agent PresentationModeGlobal -string "functionKeys"
+echo "  ✔" 
+
 
 ###############################################################################
 # Keyboard shortcuts                                                          #
@@ -183,12 +193,17 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeF
 # Trackpad: Enable App Exposé gesture
 defaults write com.apple.dock showAppExposeGestureEnabled -bool true
 
+# Trackpad Scroll direction
+defaults write NSGlobalDomain com.apple.swipescrolldirection -int 0
+
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 #defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 #defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
+### TODO check com.apple.keyboard.modifiermapping
 
 ###############################################################################
 # Screen                                                                      #
@@ -314,7 +329,7 @@ defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-br-corner -int 0
 
 # Don't show recently used applications in the Dock
-#defaults write com.Apple.Dock show-recents -bool false
+defaults write com.Apple.Dock show-recents -bool false
 
 ###############################################################################
 # Mail                                                                        #
@@ -461,6 +476,6 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool false
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "iCal"; do
+for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "ControlStrip"; do
   killall "${app}" &> /dev/null
 done
