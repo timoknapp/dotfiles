@@ -3,32 +3,45 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
-cask "dash2"
-cask "dropbox"
+cask "dash"
+cask "docker"
 cask "firefox"
-cask "font-fira-code"
-cask "font-hack"
-cask "glimmerblocker"
-cask "google-backup-and-sync"
 cask "google-chrome"
-cask "google-chrome-canary"
-cask "hammerspoon"
-cask "kaleidoscope"
-cask "macdown"
+cask "istat-menus"
+#cask "iterm2" # use alacritty
+cask "microsoft-edge"
+cask "microsoft-teams"
 cask "postman"
-cask "slack"
-cask "sourcetree"
 cask "spotify"
-cask "virtualbox"
+cask "slack"
+cask "telegram"
 cask "visual-studio-code"
 cask "vlc"
+cask "whatsapp"
+cask "enpass"
+cask "logitech-options"
+cask "alacritty"
+cask "rectangle"
+cask "font-hack-nerd-font"
 
-# Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
-cask "qlcolorcode"
-cask "qlimagesize"
-cask "qlmarkdown"
-cask "qlstephen"
-cask "qlvideo"
-cask "quicklook-json"
-cask "suspicious-package"
-cask "webpquicklook"
+# Special usb driver for minix usb-c hub
+cask "asix-ax88179"
+
+# Fonts
+cask "font-jetbrains-mono"
+
+mas "HP Scan Easy", id: 967004861
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+#mas "Magnet", id: 441258766 # use rectangle instead
+mas "Pages", id: 409201541
+mas "Twitter", id: 409789998
+mas "Xcode", id: 497799835
+
+# Office applications
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft OneNote", id: 784801555
+mas "OneDrive", id: 823766827

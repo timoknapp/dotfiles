@@ -1,0 +1,86 @@
+# Window Customization
+window:
+  dimensions:
+    columns: 140
+    lines: 38
+  padding:
+    x: 10
+    y: 10
+  decorations: none
+scrolling:
+  history: 10000
+  multiplier: 3
+background_opacity: .9
+dynamic_title: true
+  
+# Font Customization
+font:
+  normal:
+    family: Hack Nerd Font Mono
+    style: Regular
+  bold:
+    family: Hack Nerd Font Mono
+    style: Bold
+  italic:
+    family: Hack Nerd Font Mono
+    style: Italic
+  size: 13.25
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: false
+  debug:
+    persistent_logging: false
+draw_bold_text_with_bright_colors: true
+  
+# Colors (Dracula)
+colors:
+  # Default colors
+  primary:
+    background: '#282a36'
+    foreground: '#f8f8f2'
+
+  # Normal colors
+  normal:
+    black:   '#000000'
+    red:     '#ff5555'
+    green:   '#50fa7b'
+    yellow:  '#f1fa8c'
+    blue:    '#caa9fa'
+    magenta: '#ff79c6'
+    cyan:    '#8be9fd'
+    white:   '#bfbfbf'
+
+  # Bright colors
+  bright:
+    black:   '#575b70'
+    red:     '#ff6e67'
+    green:   '#5af78e'
+    yellow:  '#f4f99d'
+    blue:    '#caa9fa'
+    magenta: '#ff92d0'
+    cyan:    '#9aedfe'
+    white:   '#e6e6e6'
+  
+  selection:
+    text: '#8b99e0'
+    background: '#000000'
+    white:   '0xffffff'
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+key_bindings:
+  - { key: N, mods: Control, action: SpawnNewInstance }
+  # German Macbook keybindings
+  - { key: 28,      mods: Alt, chars: "{" }
+  - { key: 25,      mods: Alt, chars: "}" }
+  - { key: 37,      mods: Alt, chars: "@" }
+  - { key: 26,      mods: Alt|Shift, chars: "\\" }
+  - { key: 26,      mods: Alt, chars: "|" }
+  - { key: 45,      mods: Alt, chars: "~" }
+  - { key: 23,      mods: Alt, chars: "[" }
+  - { key: 22,      mods: Alt, chars: "]" }

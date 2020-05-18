@@ -8,12 +8,7 @@ It targets macOS systems, but it should work on \*nix as well (with `apt-get`).
 
 - [Homebrew](https://brew.sh) (packages: [Brewfile](./install/Brewfile))
 - [homebrew-cask](https://caskroom.github.io) (packages: [Caskfile](./install/Caskfile))
-- [Node.js + npm LTS](https://nodejs.org/en/download/) (packages: [npmfile](./install/npmfile))
-- Latest Ruby (packages: [Gemfile](./install/Gemfile))
-- Latest Git, Bash 4, Python 3, GNU coreutils, curl
-- [Hammerspoon](https://www.hammerspoon.org) (config: [keybindings & window management](./config/hammerspoon))
 - [Mackup](https://github.com/lra/mackup) (sync application settings)
-- `$EDITOR` (and Git editor) is [GNU nano](https://www.nano-editor.org)
 
 ## Install
 
@@ -25,7 +20,7 @@ On a sparkling fresh installation of macOS:
 The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS).
 Then, install this repo with `curl` available:
 
-    bash -c "`curl -fsSL https://raw.githubusercontent.com/webpro/dotfiles/master/remote-install.sh`"
+    bash -c "`curl -fsSL https://raw.githubusercontent.com/happytobi/dotfiles/master/remote-install.sh`"
 
 This will clone (using `git`), or download (using `curl` or `wget`), this repo to `~/.dotfiles`. Alternatively, clone manually into the desired location:
 
@@ -37,9 +32,12 @@ Use the [Makefile](./Makefile) to install everything [listed above](#package-ove
     make
 
 ## Post-install
-
+- `make macos-system` (set [Dock items](./macos/dock.sh) and [macOS defaults](./macos/defaults.sh) and [macOS defaults](./macos/rectangle.sh))
+or run
 - `dotfiles dock` (set [Dock items](./macos/dock.sh))
 - `dotfiles macos` (set [macOS defaults](./macos/defaults.sh))
+
+!!TODO!!
 - Mackup
   - Log in to Dropbox (and wait until synced)
   - `ln -s ~/.config/mackup/.mackup.cfg ~` (until [#632](https://github.com/lra/mackup/pull/632) is fixed)
