@@ -25,8 +25,10 @@ if [ -d "$DOTFILES_EXTRA_DIR" ]; then
 fi
 
 # Clean up
-
 unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE
+
+#set emacs keybindings
+bindkey -e
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
