@@ -17,12 +17,14 @@ core-macos: brew-macos zsh change-shell
 
 packages: brew-packages brew-cask-packages code-packages
 
-macos-system: macos-dock macos-system-defaults
+macos-system: macos-dock macos-system-defaults macos-system-extras
 
 macos-dock:
-	#/bin/bash macos/dock.sh
+	/bin/bash macos/dock.sh
 macos-system-defaults:
 	/bin/bash macos/defaults.sh
+macos-system-extras:
+	/bin/bash macos/rectangle.sh
 
 stow-macos: brew-macos
 	is-executable stow || brew install stow
@@ -36,8 +38,8 @@ endif
 link: stow-$(OS)
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then mv -v $(HOME)/$$FILE{,.bak}; fi; done
 	mkdir -p $(XDG_CONFIG_HOME)
-	stow -t $(HOME) runcom
-	stow -t $(XDG_CONFIG_HOME) config
+	stow --adopt -t $(HOME) runcom
+	stow --adopt -t $(XDG_CONFIG_HOME) config
 
 unlink: stow-$(OS)
 	stow --delete -t $(HOME) runcom
@@ -47,8 +49,10 @@ unlink: stow-$(OS)
 brew-macos:
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
 
+zsh: ZSH_DIR="$(XDG_CONFIG_HOME)/oh-my-zsh"
 zsh: brew-$(OS)
 	if ! grep -q $(ZSH) $(SHELLS); then brew install zsh && sudo append $(ZSH) $(SHELLS); fi
+	[[ -d $(ZSH_DIR) ]] || curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | ZSH=$(ZSH_DIR) sh
 
 change-shell: zsh
 ifndef CI

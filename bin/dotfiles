@@ -13,6 +13,7 @@ sub_help () {
   echo "   edit             Open dotfiles in IDE ($DOTFILES_IDE) and Git GUI ($DOTFILES_GIT_GUI)"
   echo "   help             This help message"
   echo "   macos            Apply macOS system defaults"
+  echo "   rectangle        Apply rectangle settings"
   echo "   test             Run tests"
   echo "   update           Update packages and pkg managers (OS, brew, npm, gem)"
 }
@@ -30,16 +31,14 @@ sub_update () {
   sudo softwareupdate -i -a
   brew update
   brew upgrade
-  npm install npm -g
-  npm update -g
-  gem update --system
-  gem update
+  #npm install npm -g
+  #npm update -g
+  #gem update --system
+  #gem update
 }
 
 sub_clean () {
   brew cleanup
-  gem cleanup
-  . "$NVM_DIR/nvm.sh"; nvm cache clear
 }
 
 sub_macos () {
@@ -51,6 +50,10 @@ sub_macos () {
 
 sub_dock () {
   . "${DOTFILES_DIR}/macos/dock.sh" && echo "Dock reloaded."
+}
+
+sub_rectangle () {
+  . "${DOTFILES_DIR}/macos/rectangle.sh" && echo "Please restart rectangle."
 }
 
 case $COMMAND_NAME in

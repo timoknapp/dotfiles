@@ -1,0 +1,15 @@
+# Brew
+if is-executable brew; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  # This is done by oh-my-zsh, so fpath needs to be configured before setting up oh-my-zsh
+  #autoload -Uz compinit
+  #compinit
+fi
+
+# The Fuck
+
+if is-executable thefuck; then
+  eval "$(thefuck --alias)"
+fi
+

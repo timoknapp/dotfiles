@@ -1,5 +1,0 @@
-#############################################
-##	PATH
-#############################################
-export GOPATH=$HOME/Documents/develop/opensource/go
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin:$HOME/.local/bin:$GOPATH

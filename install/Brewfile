@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "cloudfoundry/tap"
+tap "romkatv/powerlevel10k"
 
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
@@ -29,5 +30,17 @@ brew "zsh"
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Powerline10k
+brew "romkatv/powerlevel10k/powerlevel10k"
+# Terminal Multiplexer
+brew "tmux"
 #Cloud Foundry CLI
 brew "cloudfoundry/tap/cf-cli"
+# Show System information
+brew "neofetch"
+# Youtube stuff
+brew "youtube-dl"
+# Like top 
+brew "htop"
+# Update bash  
+brew "bash"

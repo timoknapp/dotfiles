@@ -12,8 +12,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
-set -x
-
 # Set computer name (as done via System Preferences → Sharing)
 #sudo scutil --set HostName "$COMPUTER_NAME"
 sudo scutil --set LocalHostName "$COMPUTER_NAME"
@@ -246,7 +244,7 @@ defaults write com.apple.finder SidebarWidth -int 180
 #defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Finder: show hidden files by default
-defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool false
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -295,6 +293,9 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true OpenWith -bool true Privileges -bool true
+
+# todo add all faviorits like in osx 10.1 :-)
+
 
 ###############################################################################
 # Mission Control                                                             #

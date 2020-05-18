@@ -1,20 +1,35 @@
-#############################################
-##	Prompt
-#############################################
-        RED="\[\033[0;31m\]"
-     YELLOW="\[\033[0;33m\]"
- 	  GREEN="\[\033[0;32m\]"
-       BLUE="\[\033[0;34m\]"
- LIGHT_BLUE="\[\033[1;34m\]"
-  LIGHT_RED="\[\033[1;31m\]"
-LIGHT_GREEN="\[\033[1;32m\]"
-      WHITE="\[\033[1;37m\]"
- LIGHT_GRAY="\[\033[0;37m\]"
- COLOR_NONE="\[\e[0m\]"
+# Setup powerline10k
+ZSH_POWERLINE10K=/usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+if [[ -f $ZSH_POWERLINE10K ]]; then
+  source $ZSH_POWERLINE10K
+fi
 
-function prompt_func() {
-    prompt="${TITLEBAR}⚡${LIGHT_BLUE}[${RED}\$(date +%H:%M)${LIGHT_BLUE}]${LIGHT_BLUE}[${RED}\w${LIGHT_BLUE}]${COLOR_NONE}⚡"
-    PS1="${prompt}\n↳ "
+# Setup zsh-syntax-highlighting
+ZSH_SYNTAX_HIGHLITING_FILE=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -f $ZSH_SYNTAX_HIGHLITING_FILE ]]; then
+  source $ZSH_SYNTAX_HIGHLITING_FILE
+fi
+
+# Setup zsh-autosuggestions
+ZSH_AUTOSUGGEST_FILE=/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -f $ZSH_AUTOSUGGEST_FILE ]]; then
+  ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
+  ZSH_AUTOSUGGEST_USE_ASYNC=true
+  source $ZSH_AUTOSUGGEST_FILE
+fi
+
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
 }
 
-PROMPT_COMMAND=prompt_func;history -a
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
+# https://github.com/zsh-users/zsh-autosuggestions/issues/351
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)

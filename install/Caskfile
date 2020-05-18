@@ -8,7 +8,7 @@ cask "docker"
 cask "firefox"
 cask "google-chrome"
 cask "istat-menus"
-cask "iterm2"
+#cask "iterm2" # use alacritty
 cask "microsoft-edge"
 cask "microsoft-teams"
 cask "postman"
@@ -18,6 +18,14 @@ cask "telegram"
 cask "visual-studio-code"
 cask "vlc"
 cask "whatsapp"
+cask "enpass"
+cask "logitech-options"
+cask "alacritty"
+cask "rectangle"
+cask "font-hack-nerd-font"
+
+# Special usb driver for minix usb-c hub
+cask "asix-ax88179"
 
 # Fonts
 cask "font-jetbrains-mono"
@@ -25,7 +33,7 @@ cask "font-jetbrains-mono"
 mas "HP Scan Easy", id: 967004861
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
-mas "Magnet", id: 441258766
+#mas "Magnet", id: 441258766 # use rectangle instead
 mas "Pages", id: 409201541
 mas "Twitter", id: 409789998
 mas "Xcode", id: 497799835

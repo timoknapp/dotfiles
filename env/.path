@@ -1,0 +1,31 @@
+#############################################
+##	PATH helper function
+#############################################
+prepend-path() {
+  [ -d $1 ] && PATH="$1:$PATH"
+}
+
+# Start with system path
+# Retrieve it from getconf, otherwise it's just current $PATH
+$DOTFILES_DIR/bin/is-executable getconf && PATH=$($(command -v getconf) PATH)
+
+#############################################
+##	PATH
+#############################################
+prepend-path "/bin"
+prepend-path "/usr/bin"
+prepend-path "/usr/local/bin"
+#prepend-path "/usr/local/opt/ruby/bin"
+prepend-path "$DOTFILES_DIR/bin"
+prepend-path "$HOME/bin"
+prepend-path "/sbin"
+prepend-path "/usr/sbin"
+prepend-path "/usr/local/sbin"
+prepend-path "{$GOPATH}"
+export GOPATH=$HOME/Documents/develop/opensource/go
+
+
+PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
+
+# Wrap up
+export PATH
