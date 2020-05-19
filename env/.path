@@ -21,9 +21,13 @@ prepend-path "$HOME/bin"
 prepend-path "/sbin"
 prepend-path "/usr/sbin"
 prepend-path "/usr/local/sbin"
-prepend-path "{$GOPATH}"
-export GOPATH=$HOME/Documents/develop/opensource/go
 
+#############################################
+## PROGRAMMING LANG
+#############################################
+export GOPATH=$HOME/Documents/develop/opensource/go
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+prepend-path "{$GOPATH}"
 
 PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
 
