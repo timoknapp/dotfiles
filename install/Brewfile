@@ -3,6 +3,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "cloudfoundry/tap"
 tap "romkatv/powerlevel10k"
+tap "Rigellute/tap"
 
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
@@ -40,7 +41,9 @@ brew "cloudfoundry/tap/cf-cli"
 brew "neofetch"
 # Youtube stuff
 brew "youtube-dl"
-# Like top 
-brew "htop"
+# Like top but written in go 
+brew "gotop"
 # Update bash  
 brew "bash"
+# ruby version manager
+brew "rbenv"
