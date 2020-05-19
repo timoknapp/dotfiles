@@ -55,10 +55,16 @@ zsh: brew-$(OS)
 	[[ -d $(ZSH_DIR) ]] || curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | ZSH=$(ZSH_DIR) sh
 
 change-shell: zsh
-ifndef CI
 	echo "ZSH $(ZSH) $(SHELLS)"
 	chsh -s $(ZSH)
-endif
+
+rbenv: brew-$(OS)
+	is-executable rbenv || brew install rbenv
+
+ruby: LATEST_RUBY=$(shell rbenv install -l | grep -v - | tail -1)
+ruby: brew-$(OS) rbenv
+	rbenv install -s $(LATEST_RUBY)
+	rbenv global $(LATEST_RUBY)
 
 brew-packages: brew-$(OS)
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
