@@ -24,8 +24,11 @@ cask "alacritty"
 cask "rectangle"
 cask "font-hack-nerd-font"
 
+# Control Monitor brightness & volume
+cask "monitorcontrol" 
+
 # Special usb driver for minix usb-c hub
-cask "asix-ax88179"
+#cask "asix-ax88179"
 
 # Fonts
 cask "font-jetbrains-mono"
