@@ -2,6 +2,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
+tap "AdoptOpenJDK/openjdk"
 
 cask "dash"
 cask "docker"
@@ -23,6 +24,10 @@ cask "logitech-options"
 cask "alacritty"
 cask "rectangle"
 cask "font-hack-nerd-font"
+
+# Java AdoptOpenJDK version
+# https://github.com/AdoptOpenJDK/homebrew-openjdk
+cask "adoptopenjdk11"
 
 # Control Monitor brightness & volume
 cask "monitorcontrol" 

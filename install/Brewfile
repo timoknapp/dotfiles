@@ -47,3 +47,5 @@ brew "gotop"
 brew "bash"
 # ruby version manager
 brew "rbenv"
+# bash ShellCheck 
+brew "shellcheck"
