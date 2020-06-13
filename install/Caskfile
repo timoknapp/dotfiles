@@ -23,7 +23,6 @@ cask "enpass"
 cask "logitech-options"
 cask "alacritty"
 cask "rectangle"
-cask "font-hack-nerd-font"
 
 # Java AdoptOpenJDK version
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
@@ -37,6 +36,8 @@ cask "monitorcontrol"
 
 # Fonts
 cask "font-jetbrains-mono"
+cask "font-hack-nerd-font"
+cask "font-victor-mono"
 
 mas "HP Scan Easy", id: 967004861
 mas "Keynote", id: 409183694
