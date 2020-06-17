@@ -9,8 +9,8 @@ cask "docker"
 cask "firefox"
 cask "google-chrome"
 cask "istat-menus"
-#cask "iterm2" # use alacritty
-cask "microsoft-edge"
+cask "iterm2" # use alacritty
+#cask "microsoft-edge"
 cask "microsoft-teams"
 cask "postman"
 cask "spotify"
@@ -21,7 +21,7 @@ cask "vlc"
 cask "whatsapp"
 cask "enpass"
 cask "logitech-options"
-cask "alacritty"
+#cask "alacritty" # use iterm2
 cask "rectangle"
 
 # Java AdoptOpenJDK version
@@ -39,12 +39,12 @@ cask "font-jetbrains-mono"
 cask "font-hack-nerd-font"
 cask "font-victor-mono"
 
-mas "HP Scan Easy", id: 967004861
+#mas "HP Scan Easy", id: 967004861
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 #mas "Magnet", id: 441258766 # use rectangle instead
 mas "Pages", id: 409201541
-mas "Twitter", id: 409789998
+#mas "Twitter", id: 409789998
 mas "Xcode", id: 497799835
 
 # Office applications
