@@ -51,3 +51,5 @@ brew "rbenv"
 brew "shellcheck"
 # gopass: cli-based secret manager
 brew "gopass"
+# openconnect vpn
+brew "openconnect"
