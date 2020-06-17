@@ -1,9 +1,9 @@
 [user]
-	name = Tobias Schug
-	email = happytobi@tscoding.de
+	name = Timo Knapp
+	email = mail@timoknapp.com
 
 [github]
-	user = HappyTobi
+	user = timoknapp
 
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --

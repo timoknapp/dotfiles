@@ -25,7 +25,7 @@ prepend-path "/usr/local/sbin"
 #############################################
 ## PROGRAMMING LANG
 #############################################
-export GOPATH=$HOME/Documents/develop/opensource/go
+export GOPATH=$HOME/.go
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 prepend-path "{$GOPATH}"
 
