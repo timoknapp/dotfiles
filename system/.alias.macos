@@ -2,6 +2,26 @@
 
 alias flushdns="sudo dscacheutil -flushcache && killall -HUP mDNSResponder"
 
+# Reconnect WiFi
+
+wifi() {
+    networksetup -setairportpower en0 off
+    networksetup -setairportpower en0 on
+}
+
 # Clean up LaunchServices to remove duplicates in the "Open With" menu
 
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+# Starts all your main apps as good morning ritual.
+
+moin() {
+    # Feel free to modify!
+    # mail, calendar, teams, firefox, amphetamine, enpass
+    open /System/Applications/Mail.app
+    open /System/Applications/Calendar.app
+    open /Applications/Microsoft\ Teams.app
+    open /Applications/Firefox.app
+    open /Applications/Amphetamine.app
+    open /Applications/Enpass.app
+}
