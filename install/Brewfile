@@ -49,3 +49,5 @@ brew "bash"
 brew "rbenv"
 # bash ShellCheck 
 brew "shellcheck"
+# gopass: cli-based secret manager
+brew "gopass"
