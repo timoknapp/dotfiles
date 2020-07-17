@@ -18,3 +18,10 @@
 
 [grep]
 	lineNumber = true
+  
+[includeIf "gitdir:~/workspace/work/"]
+    path = ~/workspace/work/.gitconfig
+[includeIf "gitdir:~/workspace/private/github/"]
+    path = ~/workspace/private/github/.gitconfig
+[includeIf "gitdir:~/workspace/private/gitlab/"]
+    path = ~/workspace/private/gitlab/.gitconfig
