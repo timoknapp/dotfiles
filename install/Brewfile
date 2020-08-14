@@ -53,3 +53,5 @@ brew "shellcheck"
 brew "gopass"
 # openconnect vpn
 brew "openconnect"
+# Kubernetes CLI
+brew "kubernetes-cli"
