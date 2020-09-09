@@ -57,6 +57,11 @@ or run
        test             Run tests
        update           Update packages and pkg managers (OS, brew, npm, gem)
 
+## Tools installed
+If you want to review the tools which are part of the setup go:
+- [here (brew)](https://github.com/timoknapp/.files/blob/master/install/Brewfile)
+- [here (brew cask)](https://github.com/timoknapp/.files/blob/master/install/Caskfile)
+
 ## Customize/extend
 
 You can put your custom settings, such as Git credentials in the `system/.custom` file which will be sourced from `.bash_profile` automatically. This file is in `.gitignore`.
