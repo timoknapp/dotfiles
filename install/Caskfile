@@ -24,6 +24,7 @@ cask "enpass"
 cask "logitech-options"
 #cask "alacritty" # use iterm2
 cask "rectangle"
+cask "ballast" # Keep your audio balance from drifting! OSX Status Bar App, https://github.com/jamsinclair/ballast
 
 # Java AdoptOpenJDK version
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
