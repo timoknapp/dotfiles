@@ -24,13 +24,18 @@ cask "enpass"
 cask "logitech-options"
 #cask "alacritty" # use iterm2
 cask "rectangle"
-cask "ballast" # Keep your audio balance from drifting! OSX Status Bar App, https://github.com/jamsinclair/ballast
 
 # Java AdoptOpenJDK version
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
 cask "adoptopenjdk11"
 
-# Control Monitor brightness & volume
+# macOS system monitor in your menu bar, https://github.com/exelban/stats
+cask "stats"
+
+# Keep your audio balance from drifting! OSX Status Bar App, https://github.com/jamsinclair/ballast
+cask "ballast"
+
+# Control Monitor brightness & volume, https://github.com/MonitorControl/MonitorControl
 cask "monitorcontrol" 
 
 # Special usb driver for minix usb-c hub
@@ -56,4 +61,5 @@ mas "Microsoft Word", id: 462054704
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft Outlook", id: 985367838
 mas "Microsoft OneNote", id: 784801555
+mas "Micosoft To Do", id: 1274495053
 mas "OneDrive", id: 823766827
