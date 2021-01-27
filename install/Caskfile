@@ -37,7 +37,10 @@ cask "stats"
 cask "ballast"
 
 # Control Monitor brightness & volume, https://github.com/MonitorControl/MonitorControl
-cask "monitorcontrol" 
+cask "monitorcontrol"
+
+# Your next meeting always before your eyes in the macOS menu bar, https://github.com/leits/MeetingBar
+cask "meetingbar"
 
 # Special usb driver for minix usb-c hub
 #cask "asix-ax88179"
