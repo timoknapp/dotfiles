@@ -20,11 +20,11 @@ On a sparkling fresh installation of macOS:
 The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS).
 Then, install this repo with `curl` available:
 
-    bash -c "`curl -fsSL https://raw.githubusercontent.com/timoknapp/.files/master/remote-install.sh`"
+    bash -c "`curl -fsSL https://raw.githubusercontent.com/timoknapp/dotfiles/master/remote-install.sh`"
 
 This will clone (using `git`), or download (using `curl` or `wget`), this repo to `~/.dotfiles`. Alternatively, clone manually into the desired location:
 
-    git clone https://github.com/timoknapp/.files.git ~/.dotfiles
+    git clone https://github.com/timoknapp/dotfiles.git ~/.dotfiles
 
 Use the [Makefile](./Makefile) to install everything [listed above](#package-overview), and symlink [runcom](./runcom) and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
 
@@ -59,8 +59,8 @@ or run
 
 ## Tools installed
 If you want to review the tools which are part of the setup go:
-- [here (brew)](https://github.com/timoknapp/.files/blob/master/install/Brewfile)
-- [here (brew cask)](https://github.com/timoknapp/.files/blob/master/install/Caskfile)
+- [here (brew)](https://github.com/timoknapp/dotfiles/blob/master/install/Brewfile)
+- [here (brew cask)](https://github.com/timoknapp/dotfiles/blob/master/install/Caskfile)
 
 ## Customize/extend
 
