@@ -2,13 +2,13 @@
 export ZSH=$HOME/.config/oh-my-zsh
 
 #LOAD powerline10k in .prompt
-#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Use VS Code Insiders with vscode oh-my-zsh plugin
 #VSCODE=code-insiders
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(dash docker git gitignore kubectl npm npx osx rbenv thefuck tmux vscode)
+plugins=(dash docker git gitignore bundler kubectl npm npx dotenv osx rake rbenv thefuck tmux vscode ruby zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
