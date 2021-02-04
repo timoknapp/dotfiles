@@ -55,3 +55,7 @@ brew "gopass"
 brew "openconnect"
 # Kubernetes CLI
 brew "kubernetes-cli"
+# Maven
+brew "maven"
+# Gradle
+brew "gradle"
