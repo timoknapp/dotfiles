@@ -44,6 +44,9 @@ cask "monitorcontrol"
 # Your next meeting always before your eyes in the macOS menu bar, https://github.com/leits/MeetingBar
 cask "meetingbar"
 
+# A simple tool to calculate the overall performance of an investment portfolio. https://github.com/buchen/portfolio
+cask "portfolioperformance" 
+
 # Special usb driver for minix usb-c hub
 #cask "asix-ax88179"
 
