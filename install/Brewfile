@@ -35,8 +35,10 @@ brew "zsh-syntax-highlighting"
 brew "romkatv/powerlevel10k/powerlevel10k"
 # Terminal Multiplexer
 brew "tmux"
-#Cloud Foundry CLI
+#Cloud Foundry CLI V6
 brew "cloudfoundry/tap/cf-cli"
+#Cloud Foundry CLI V7
+brew "cloudfoundry/tap/cf-cli@7"
 # Show System information
 brew "neofetch"
 # Youtube stuff
