@@ -41,8 +41,6 @@ brew "cloudfoundry/tap/cf-cli"
 brew "cloudfoundry/tap/cf-cli@7"
 # Show System information
 brew "neofetch"
-# Youtube stuff
-brew "youtube-dl"
 # Like top but written in go 
 brew "gotop"
 # Update bash  
