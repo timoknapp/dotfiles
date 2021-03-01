@@ -27,6 +27,8 @@ cask "logitech-options"
 #cask "alacritty" # use iterm2
 cask "rectangle"
 cask "deepl"
+cask "discord"
+cask "gimp"
 
 # Java AdoptOpenJDK version
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
