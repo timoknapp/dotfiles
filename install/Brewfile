@@ -4,6 +4,7 @@ tap "homebrew/services"
 tap "cloudfoundry/tap"
 tap "romkatv/powerlevel10k"
 tap "Rigellute/tap"
+tap "spring-io/tap"
 
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
@@ -61,3 +62,5 @@ brew "maven"
 brew "gradle"
 # Graphviz for PlantUML
 brew "graphviz"
+# Spring Boot CLI
+brew "spring-boot"
