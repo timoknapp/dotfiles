@@ -5,6 +5,7 @@ tap "cloudfoundry/tap"
 tap "romkatv/powerlevel10k"
 tap "Rigellute/tap"
 tap "spring-io/tap"
+tap "hashicorp/tap" 
 
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
@@ -64,3 +65,5 @@ brew "gradle"
 brew "graphviz"
 # Spring Boot CLI
 brew "spring-boot"
+# Terraform
+brew "hashicorp/tap/terraform"
