@@ -67,3 +67,5 @@ brew "graphviz"
 brew "spring-boot"
 # Terraform
 brew "hashicorp/tap/terraform"
+# Redis
+brew "redis"
