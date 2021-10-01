@@ -29,6 +29,7 @@ cask "rectangle"
 cask "deepl"
 cask "discord"
 cask "gimp"
+cask "calibre"
 
 # Java AdoptOpenJDK version
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
