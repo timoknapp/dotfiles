@@ -69,3 +69,5 @@ brew "spring-boot"
 brew "hashicorp/tap/terraform"
 # Redis
 brew "redis"
+# podman
+brew "podman"
