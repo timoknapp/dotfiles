@@ -30,6 +30,7 @@ cask "deepl"
 cask "discord"
 cask "gimp"
 cask "calibre"
+cask "drawio"
 
 # Java AdoptOpenJDK version
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
