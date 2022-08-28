@@ -25,6 +25,7 @@ cask "vlc"
 cask "whatsapp"
 cask "enpass"
 cask "logitech-options"
+cask "logi-options-plus"
 #cask "alacritty" # use iterm2
 cask "rectangle"
 cask "deepl"
