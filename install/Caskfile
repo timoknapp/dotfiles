@@ -2,14 +2,14 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "AdoptOpenJDK/openjdk"
+#tap "AdoptOpenJDK/openjdk"
 
 cask "dash"
 cask "docker"
 cask "firefox"
 cask "google-chrome"
 cask "brave-browser"
-cask "waterfox"
+#cask "waterfox"
 cask "iterm2"
 #cask "microsoft-edge"
 cask "microsoft-teams"
@@ -17,7 +17,7 @@ cask "postman"
 cask "spotify"
 cask "sonos"
 cask "slack"
-cask "telegram"
+#cask "telegram"
 cask "signal"
 cask "visual-studio-code"
 cask "intellij-idea"
@@ -36,7 +36,10 @@ cask "drawio"
 
 # Java AdoptOpenJDK version
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
-cask "adoptopenjdk11"
+# cask "adoptopenjdk16"
+
+# JDK Eclipse Temurin
+cask temurin
 
 # macOS system monitor in your menu bar, https://github.com/exelban/stats
 cask "stats"
