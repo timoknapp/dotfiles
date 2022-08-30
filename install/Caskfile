@@ -39,7 +39,7 @@ cask "drawio"
 # cask "adoptopenjdk16"
 
 # JDK Eclipse Temurin
-cask temurin
+cask "temurin"
 
 # macOS system monitor in your menu bar, https://github.com/exelban/stats
 cask "stats"
