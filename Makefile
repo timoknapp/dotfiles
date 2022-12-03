@@ -1,21 +1,22 @@
 SHELL = /bin/zsh
-ZSH=/usr/local/bin/zsh
-SHELLS=/private/etc/shells
-DOTFILES_DIR := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
-OS := $(shell bin/is-supported bin/is-macos macos) #if you want linux support add linux here
-PATH := $(DOTFILES_DIR)/bin:$(PATH)
+OS := $(shell bin/is-supported bin/is-macos macos linux)
+DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+HOMEBREW_PREFIX := $(shell bin/is-supported bin/is-arm64 /opt/homebrew /usr/local)
+PATH := $(HOMEBREW_PREFIX)/bin:$(DOTFILES_DIR)/bin:$(PATH)
+
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
+export ACCEPT_EULA=Y
 
 .PHONY: test
 
 all: $(OS)
 
-macos: sudo core-macos packages link #mackup
+macos: sudo core-macos packages link #mackup link
 
-core-macos: brew-macos zsh change-shell
+core-macos: brew zsh
 
-packages: brew-packages brew-cask-packages code-packages
+packages: brew-packages code-packages
 
 macos-system: macos-dock macos-system-defaults macos-system-extras
 
@@ -26,7 +27,7 @@ macos-system-defaults:
 macos-system-extras:
 	/bin/bash macos/rectangle.sh
 
-stow-macos: brew-macos
+stow-macos: brew
 	is-executable stow || brew install stow
 
 sudo:
@@ -36,43 +37,46 @@ ifndef CI
 endif
 
 link: stow-$(OS)
-	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then mv -v $(HOME)/$$FILE{,.bak}; fi; done
+	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then \
+		mv -v $(HOME)/$$FILE{,.bak}; fi; done
 	mkdir -p $(XDG_CONFIG_HOME)
-	stow --adopt -t $(HOME) runcom
-	stow --adopt -t $(XDG_CONFIG_HOME) config
+	$(HOMEBREW_PREFIX)/bin/stow --adopt -t $(HOME) runcom
+	$(HOMEBREW_PREFIX)/bin/stow --adopt -t $(XDG_CONFIG_HOME) config
 
 unlink: stow-$(OS)
-	stow --delete -t $(HOME) runcom
-	stow --delete -t $(XDG_CONFIG_HOME) config
-	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
+	$(HOMEBREW_PREFIX)/bin/stow --delete -t $(HOME) runcom
+	$(HOMEBREW_PREFIX)/bin/stow --delete -t $(XDG_CONFIG_HOME) config
+	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then \
+		mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
 
-brew-macos:
-	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
+brew:
+	/bin/bash $(DOTFILES_DIR)/install/base.sh
+	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
+zsh: SHELLS=/private/etc/shells
+zsh: ZSH_BIN=$(HOMEBREW_PREFIX)/bin/zsh
 zsh: ZSH_DIR="$(XDG_CONFIG_HOME)/oh-my-zsh"
-zsh: brew-$(OS)
-	if ! grep -q $(ZSH) $(SHELLS); then brew install zsh && sudo append $(ZSH) $(SHELLS); fi
+zsh: BREW_BIN=$(HOMEBREW_PREFIX)/bin/brew
+zsh: brew
+	if ! grep -q $(ZSH_BIN) $(SHELLS); then \
+		$(BREW_BIN) install zsh && \
+		sudo append $(ZSH_BIN) $(SHELLS) && \
+		chsh -s $(ZSH_BIN); \
+	fi
 	[[ -d $(ZSH_DIR) ]] || curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | ZSH=$(ZSH_DIR) sh
 
-change-shell: zsh
-	echo "ZSH $(ZSH) $(SHELLS)"
-	chsh -s $(ZSH)
-
-rbenv: brew-$(OS)
+rbenv: brew
 	is-executable rbenv || brew install rbenv
 
 ruby: LATEST_RUBY=$(shell rbenv install -l | grep -v - | tail -1)
-ruby: brew-$(OS) rbenv
+ruby: brew rbenv
 	rbenv install -s $(LATEST_RUBY)
 	rbenv global $(LATEST_RUBY)
 
-brew-packages: brew-$(OS)
-	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
+brew-packages: brew
+	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile || true
 
-brew-cask-packages: brew-macos
-	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile
-
-code-packages: brew-macos
+code-packages: brew
 	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
 
 mackup: link

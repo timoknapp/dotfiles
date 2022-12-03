@@ -15,12 +15,16 @@ $DOTFILES_DIR/bin/is-executable getconf && PATH=$($(command -v getconf) PATH)
 prepend-path "/bin"
 prepend-path "/usr/bin"
 prepend-path "/usr/local/bin"
-#prepend-path "/usr/local/opt/ruby/bin"
+prepend-path "/opt/homebrew/bin"
+prepend-path "$HOME/.rvm/bin"
 prepend-path "$DOTFILES_DIR/bin"
 prepend-path "$HOME/bin"
 prepend-path "/sbin"
 prepend-path "/usr/sbin"
 prepend-path "/usr/local/sbin"
+prepend-path "/opt/homebrew/sbin"
+prepend-path "/opt/homebrew/opt/openssl@3/bin"
+
 
 #############################################
 ## PROGRAMMING LANG

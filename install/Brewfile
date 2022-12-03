@@ -7,6 +7,13 @@ tap "Rigellute/tap"
 tap "spring-io/tap"
 tap "hashicorp/tap" 
 
+#Cask taps
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+#tap "AdoptOpenJDK/openjdk"
+
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -71,3 +78,74 @@ brew "hashicorp/tap/terraform"
 brew "redis"
 # podman
 brew "podman"
+
+# Cask applications
+cask "dash"
+cask "docker"
+cask "firefox"
+#cask "google-chrome"
+#cask "brave-browser"
+#cask "waterfox"
+cask "iterm2"
+cask "microsoft-edge"
+cask "microsoft-teams"
+cask "postman"
+cask "spotify"
+cask "sonos"
+cask "slack"
+#cask "telegram"
+cask "signal"
+cask "visual-studio-code"
+cask "intellij-idea"
+cask "vlc"
+cask "whatsapp"
+cask "enpass"
+cask "logitech-options"
+cask "logi-options-plus"
+#cask "alacritty" # use iterm2
+cask "rectangle"
+cask "deepl"
+cask "discord"
+cask "gimp"
+cask "calibre"
+cask "drawio"
+
+# Java AdoptOpenJDK version
+# https://github.com/AdoptOpenJDK/homebrew-openjdk
+# cask "adoptopenjdk16"
+
+# JDK Eclipse Temurin
+cask "temurin"
+
+# macOS system monitor in your menu bar, https://github.com/exelban/stats
+cask "stats"
+
+# Keep your audio balance from drifting! OSX Status Bar App, https://github.com/jamsinclair/ballast
+cask "ballast"
+
+# Control Monitor brightness & volume, https://github.com/MonitorControl/MonitorControl
+cask "monitorcontrol"
+
+# Your next meeting always before your eyes in the macOS menu bar, https://github.com/leits/MeetingBar
+cask "meetingbar"
+
+# A simple tool to calculate the overall performance of an investment portfolio. https://github.com/buchen/portfolio
+cask "portfolioperformance" 
+
+# Special usb driver for minix usb-c hub
+#cask "asix-ax88179"
+
+# Fonts
+cask "font-jetbrains-mono"
+cask "font-hack-nerd-font"
+cask "font-victor-mono"
+
+#mas "Keynote", id: 409183694
+#mas "Numbers", id: 409203825
+#mas "Pages", id: 409201541
+mas "Xcode", id: 497799835
+mas "Amphetamine", id: 937984704
+#mas "All-in-One Messenger", id: 1456462087
+
+# Microsoft Office, Word, Excel, PP, onedrive, outlook
+brew "microsoft-office"

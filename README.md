@@ -7,7 +7,6 @@ It targets macOS systems, but it should work on \*nix as well (with `apt-get`).
 ## Package overview
 
 - [Homebrew](https://brew.sh) (packages: [Brewfile](./install/Brewfile))
-- [homebrew-cask](https://caskroom.github.io) (packages: [Caskfile](./install/Caskfile))
 - [Mackup](https://github.com/lra/mackup) (sync application settings)
 
 ## Install
@@ -60,7 +59,6 @@ or run
 ## Tools installed
 If you want to review the tools which are part of the setup go:
 - [here (brew)](https://github.com/timoknapp/dotfiles/blob/master/install/Brewfile)
-- [here (brew cask)](https://github.com/timoknapp/dotfiles/blob/master/install/Caskfile)
 
 ## Customize/extend
 

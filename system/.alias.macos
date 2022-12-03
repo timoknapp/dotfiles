@@ -25,3 +25,8 @@ moin() {
     open /Applications/Amphetamine.app
     open /Applications/Enpass.app
 }
+
+# JWT Decode
+jwt() {
+  jq -R 'split(".") | .[1] | @base64d | fromjson' <<< $1
+}
