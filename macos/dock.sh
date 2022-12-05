@@ -1,6 +1,7 @@
 #!/bin/sh
 
-is-executable dockutil || brew install dockutil
+# Not using official dockutil version, since it does not support Python3 (https://github.com/kcrawford/dockutil/issues/127)
+is-executable dockutil || brew install --cask hpedrorodrigues/tools/dockutil
 
 dockutil --no-restart --remove all
 

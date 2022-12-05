@@ -6,3 +6,4 @@ defaults write com.knollsoft.Rectangle almostMaximizeWidth -float .98
 defaults write com.knollsoft.Rectangle launchOnLogin -int 1
 
 killall Rectangle
+open /Applications/Rectangle.app

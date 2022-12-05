@@ -39,6 +39,9 @@ sudo systemsetup -settimezone "Europe/Berlin" > /dev/null
 # Disable Sudden Motion Sensor
 #sudo pmset -a sms 0
 
+# Change alert sound effect. All options can be reviewed here: /System/Library/Sounds
+defaults write NSGlobalDomain com.apple.sound.beep.sound /System/Library/Sounds/Frog.aiff
+
 # Disable audio feedback when volume is changed
 defaults write com.apple.sound.beep.feedback -bool false
 
@@ -52,10 +55,10 @@ defaults write com.apple.sound.beep.feedback -bool false
 defaults write com.apple.menuextra.battery ShowPercent YES
 
 # Menu bar: add volume item if it doesn't exist yet
-volume=$(grep "Volume.menu" ~/Library/Preferences/com.apple.systemuiserver.plist -c)
-if [ $volume = 0 ]; then
-    open '/System/Library/CoreServices/Menu Extras/Volume.menu'
-fi
+# volume=$(grep "Volume.menu" ~/Library/Preferences/com.apple.systemuiserver.plist -c)
+# if [ $volume = 0 ]; then
+#     open '/System/Library/CoreServices/Menu Extras/Volume.menu'
+# fi
 
 # Disable opening and closing window animations
 #defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
@@ -324,9 +327,9 @@ defaults write com.apple.dock showhidden -bool true
 #defaults write com.apple.dock no-bouncing -bool true
 
 # Disable hot corners
-defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tl-corner -int 4
 defaults write com.apple.dock wvous-tr-corner -int 0
-defaults write com.apple.dock wvous-bl-corner -int 0
+defaults write com.apple.dock wvous-bl-corner -int 2
 defaults write com.apple.dock wvous-br-corner -int 0
 
 # Don't show recently used applications in the Dock

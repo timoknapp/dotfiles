@@ -9,6 +9,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(dash docker git gitignore bundler kubectl npm npx dotenv osx rake rbenv thefuck tmux vscode ruby zsh-autosuggestions)
+plugins=(dash docker git gitignore bundler kubectl npm dotenv macos rake rbenv thefuck tmux vscode ruby zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh

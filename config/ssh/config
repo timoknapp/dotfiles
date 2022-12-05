@@ -1,0 +1,17 @@
+# GitHub (private)
+# Host github.com
+#  HostName github.com
+#  User git
+#  IdentityFile ~/.ssh/github_tk_private
+
+# GitHub (work)
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_tk_work
+
+# GitLab
+Host gitlab.com
+  HostName gitlab.com
+  User git
+  IdentityFile ~/.ssh/gitlab_tk

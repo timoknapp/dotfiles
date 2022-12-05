@@ -1,8 +1,8 @@
 SHELL = /bin/zsh
-OS := $(shell bin/is-supported bin/is-macos macos linux)
-DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-HOMEBREW_PREFIX := $(shell bin/is-supported bin/is-arm64 /opt/homebrew /usr/local)
-PATH := $(HOMEBREW_PREFIX)/bin:$(DOTFILES_DIR)/bin:$(PATH)
+OS:=$(shell bin/is-supported bin/is-macos macos linux)
+DOTFILES_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+HOMEBREW_PREFIX:=$(shell bin/is-supported bin/is-arm64 /opt/homebrew /usr/local)
+PATH:=$(HOMEBREW_PREFIX)/bin:$(DOTFILES_DIR)/bin:$(PATH)
 
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
@@ -26,6 +26,9 @@ macos-system-defaults:
 	/bin/bash macos/defaults.sh
 macos-system-extras:
 	/bin/bash macos/rectangle.sh
+	/bin/bash macos/meetingbar.sh
+	/bin/bash macos/touchid.sh
+	/bin/bash macos/dev-workspace.sh
 
 stow-macos: brew
 	is-executable stow || brew install stow
@@ -55,7 +58,10 @@ brew:
 
 zsh: SHELLS=/private/etc/shells
 zsh: ZSH_BIN=$(HOMEBREW_PREFIX)/bin/zsh
-zsh: ZSH_DIR="$(XDG_CONFIG_HOME)/oh-my-zsh"
+zsh: ZSH_DIR=$(XDG_CONFIG_HOME)/oh-my-zsh
+zsh: ZSH_CUSTOM=$(ZSH_DIR)/custom
+zsh: ZSH_CUSTOM_THEMES=$(ZSH_CUSTOM)/themes
+zsh: ZSH_CUSTOM_PLUGINS=$(ZSH_CUSTOM)/plugins
 zsh: BREW_BIN=$(HOMEBREW_PREFIX)/bin/brew
 zsh: brew
 	if ! grep -q $(ZSH_BIN) $(SHELLS); then \
@@ -63,7 +69,10 @@ zsh: brew
 		sudo append $(ZSH_BIN) $(SHELLS) && \
 		chsh -s $(ZSH_BIN); \
 	fi
-	[[ -d $(ZSH_DIR) ]] || curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | ZSH=$(ZSH_DIR) sh
+	[[ -d "$(ZSH_DIR)" ]] || curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | ZSH=$(ZSH_DIR) sh
+	cp $(DOTFILES_DIR)/install/fonts/* ~/Library/Fonts
+	[[ -d "$(ZSH_CUSTOM_THEMES)/powerlevel10k" ]] && echo "Powerlevel10k is already installed." || git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $(ZSH_CUSTOM_THEMES)/powerlevel10k
+	[[ -d "$(ZSH_CUSTOM_PLUGINS)/zsh-autosuggestions" ]] && echo "zsh-autosuggestions is already installed." || git clone https://github.com/zsh-users/zsh-autosuggestions $(ZSH_CUSTOM_PLUGINS)/zsh-autosuggestions
 
 rbenv: brew
 	is-executable rbenv || brew install rbenv

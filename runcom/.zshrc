@@ -4,16 +4,16 @@
 
 # Source the dotfiles (order matters)
 # Completions must be initalized before oh-my-zsh
-#for DOTFILE in "$DOTFILES_DIR"/system/.{grep,prompt,completion,macos,oh-my-zsh,alias}; do
-for DOTFILE in "$DOTFILES_DIR"/system/.{grep,prompt,completion,macos,alias}; do
+for DOTFILE in "$DOTFILES_DIR"/system/.{grep,prompt,completion,macos,oh-my-zsh,alias}; do
+# for DOTFILE in "$DOTFILES_DIR"/system/.{grep,prompt,completion,macos,alias}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
-#if is-macos; then
-#  for DOTFILE in "$DOTFILES_DIR"/system/.{macos}; do
-#    [ -f "$DOTFILE" ] && . "$DOTFILE"
-#  done
-#fi
+if is-macos; then
+ for DOTFILE in "$DOTFILES_DIR"/system/.{alias.macos,macos}; do
+   [ -f "$DOTFILE" ] && . "$DOTFILE"
+ done
+fi
 
 # Hook for extra/custom stuff
 

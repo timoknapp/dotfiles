@@ -146,6 +146,7 @@ cask "font-victor-mono"
 mas "Xcode", id: 497799835
 mas "Amphetamine", id: 937984704
 #mas "All-in-One Messenger", id: 1456462087
+mas "Microsoft To Do", id: 1274495053
 
 # Microsoft Office, Word, Excel, PP, onedrive, outlook
-brew "microsoft-office"
+cask "microsoft-office"
