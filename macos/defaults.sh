@@ -30,8 +30,16 @@ defaults write NSGlobalDomain AppleLocale -string "en_DE"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
+# TODO: This command will cause an issue: systemsetup[24539:539686] ### Error:-99 File:/AppleInternal/Library/BuildRoots/a0876c02-1788-11ed-b9c4-96898e02b808/Library/Caches/com.apple.xbs/Sources/Admin/InternetServices.m Line:379
 # Set the timezone (see `sudo systemsetup -listtimezones` for other values)
-sudo systemsetup -settimezone "Europe/Berlin" > /dev/null
+# sudo systemsetup -settimezone "Europe/Berlin" > /dev/null
+
+# Using systemsetup might give Error:-99, can be ignored (commands still work)
+# systemsetup manpage: https://ss64.com/osx/systemsetup.html
+
+# Set the time zone
+sudo defaults write /Library/Preferences/com.apple.timezone.auto Active -bool YES
+sudo systemsetup -setusingnetworktime on
 
 # Set standby delay to 24 hours (default is 1 hour)
 #sudo pmset -a standbydelay 86400
@@ -89,7 +97,8 @@ defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 # Disable the crash reporter
 #defaults write com.apple.CrashReporter DialogType -string "none"
 
-# Restart automatically if the computer freezes
+# TODO: This command will cause an issue: systemsetup[24125:536664] ### Error:-99 File:/AppleInternal/Library/BuildRoots/a0876c02-1788-11ed-b9c4-96898e02b808/Library/Caches/com.apple.xbs/Sources/Admin/InternetServices.m Line:379
+# Restart automatically if the computer freezes (Error:-99 can be ignored)
 sudo systemsetup -setrestartfreeze on
 
 # Disable Notification Center and remove the menu bar icon
@@ -138,7 +147,6 @@ echo -n "Change Touchbar"
 defaults write com.apple.touchbar.agent 'PresentationModeFnModes = {functionKeys = app;};'
 defaults write com.apple.touchbar.agent PresentationModeGlobal -string "functionKeys"
 echo "  ✔" 
-
 
 ###############################################################################
 # Keyboard shortcuts                                                          #

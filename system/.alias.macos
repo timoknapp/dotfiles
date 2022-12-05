@@ -18,10 +18,11 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 moin() {
     # Feel free to modify!
     # mail, calendar, teams, firefox, amphetamine, enpass
-    open /System/Applications/Mail.app
+    # open /System/Applications/Mail.app
     open /System/Applications/Calendar.app
+    open /Applications/Microsoft\ Outlook.app
     open /Applications/Microsoft\ Teams.app
-    open /Applications/Firefox.app
+    open /Applications/Microsoft\ Edge.app
     open /Applications/Amphetamine.app
     open /Applications/Enpass.app
 }

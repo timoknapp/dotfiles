@@ -28,15 +28,17 @@ This will clone (using `git`), or download (using `curl` or `wget`), this repo t
 Use the [Makefile](./Makefile) to install everything [listed above](#package-overview), and symlink [runcom](./runcom) and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
 
     cd ~/.dotfiles
+    # Same as "make macos"
     make
 
 ## Post-install
-- `make macos-system` (set [Dock items](./macos/dock.sh) and [macOS defaults](./macos/defaults.sh) and [macOS defaults](./macos/rectangle.sh))
+- `make macos-system` (set [Dock items](./macos/dock.sh) and [macOS defaults](./macos/defaults.sh) and macOS extras (e.g. rectangle, meetingbar, touchid, dev workspace)
 or run
-- `dotfiles dock` (set [Dock items](./macos/dock.sh))
-- `dotfiles macos` (set [macOS defaults](./macos/defaults.sh))
+- `dotfiles dock` / `make macos-dock` (set [Dock items](./macos/dock.sh))
+- `make macos-system-defaults` (set [Defaults](./macos/defaults.sh))
+- `make macos-system-extras` (setup extra tooling)
 
-!!TODO!!
+> TODO
 - Mackup
   - Log in to Dropbox (and wait until synced)
   - `ln -s ~/.config/mackup/.mackup.cfg ~` (until [#632](https://github.com/lra/mackup/pull/632) is fixed)
