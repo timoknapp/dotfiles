@@ -109,6 +109,7 @@ cask "discord"
 cask "gimp"
 cask "calibre"
 cask "drawio"
+cask "powershell"
 
 # Java AdoptOpenJDK version
 # https://github.com/AdoptOpenJDK/homebrew-openjdk

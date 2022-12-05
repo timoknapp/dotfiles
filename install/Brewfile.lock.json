@@ -5,7 +5,7 @@
         "revision": "12f0d2771034484a69f776e1ac2bea578a6b64fd"
       },
       "homebrew/core": {
-        "revision": "6ad441c0ca75fecc3546d4a35d75631588090dbc"
+        "revision": "e0db0ed282a9d28bf286b647e02c28f7f2d34697"
       },
       "homebrew/services": {
         "revision": "042713cf1c2bf9f218b2bf96c0efd69dc89478f7"
@@ -26,16 +26,16 @@
         "revision": "21349fe0a231acf2a30accd2e3c37e349705527d"
       },
       "homebrew/cask": {
-        "revision": "d8442b4512d6a7c8da8c982c7f37d4ff1716bcc2"
+        "revision": "1892833063b5f0c7d13372e7504aea7af5ecd20c"
       },
       "homebrew/cask-drivers": {
         "revision": "cc9cda92930958e4020b2d723e1f2fe3ac006102"
       },
       "homebrew/cask-fonts": {
-        "revision": "0d0a39b32bdd1d6c9e862066e5208c064976d707"
+        "revision": "8a6c48c4cd39ac079efd5aae693e9d3c3bfd043d"
       },
       "homebrew/cask-versions": {
-        "revision": "67c0d7393349db7939abfed0852a8e5b18231a29"
+        "revision": "d0599a79c441e1bfec6d58da3a430c4f6a7023f6"
       }
     },
     "brew": {
@@ -1344,7 +1344,7 @@
         }
       },
       "microsoft-edge": {
-        "version": "107.0.1418.68",
+        "version": "108.0.1462.41",
         "options": {
           "full_name": "microsoft-edge"
         }
@@ -1528,6 +1528,12 @@
         "options": {
           "full_name": "font-meslo-lg-nerd-font"
         }
+      },
+      "powershell": {
+        "version": "7.3.0",
+        "options": {
+          "full_name": "powershell"
+        }
       }
     },
     "mas": {
@@ -1550,7 +1556,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.6.14",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "6ad441c0ca75fecc3546d4a35d75631588090dbc",
+        "Homebrew/homebrew-core": "e0db0ed282a9d28bf286b647e02c28f7f2d34697",
         "CLT": "14.1.0.0.1.1666437224",
         "Xcode": "14.1",
         "macOS": "12.6.1"

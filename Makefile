@@ -27,6 +27,7 @@ macos-system-defaults:
 macos-system-extras:
 	/bin/bash macos/rectangle.sh
 	/bin/bash macos/meetingbar.sh
+	/bin/bash macos/amphetamine.sh
 	/bin/bash macos/touchid.sh
 	/bin/bash macos/dev-workspace.sh
 
