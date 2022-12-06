@@ -111,6 +111,9 @@ cask "calibre"
 cask "drawio"
 cask "powershell"
 
+# hides notch, https://topnotch.app
+cask "topnotch"
+
 # Java AdoptOpenJDK version
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
 # cask "adoptopenjdk16"
