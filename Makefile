@@ -32,6 +32,7 @@ macos-system-extras:
 	/bin/bash macos/dev-workspace.sh
 	/bin/bash macos/spotify.sh
 	/bin/bash macos/topnotch.sh
+	/bin/bash macos/iterm.sh
 # TODO: Add config for iTerm: Profiles, Theme (dark), Font (MesloLGS NF)
 
 stow-macos: brew
