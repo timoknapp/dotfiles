@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Setting Touch ID preferences..."
+
 # Update /etc/pam.d/sudo to allow Touch ID: https://azimi.io/how-to-enable-touch-id-for-sudo-on-macbook-pro-46272ac3e2df
 SUDO_FILE=/etc/pam.d/sudo
 if grep -q "pam_tid.so" "$SUDO_FILE"; then

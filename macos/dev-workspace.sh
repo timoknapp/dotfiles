@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Setting up workspace..."
+
 XDG_CONFIG_HOME=~/.config
 
 # Create Symlink for central .gitconfig

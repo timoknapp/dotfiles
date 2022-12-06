@@ -22,5 +22,6 @@ dockutil --no-restart --add "/Applications/Visual Studio Code.app"
 #dockutil --no-restart --add "/Applications/Alacritty.app"
 dockutil --no-restart --add "/Applications/iTerm.app"
 dockutil --no-restart --add "/System/Applications/System Preferences.app"
+dockutil --no-restart --add "/Applications" --view grid --display folder --sort name
 
 killall Dock

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Setting MeetingBar preferences..."
+
 defaults write leits.MeetingBar launchAtLogin -int 1
 defaults write leits.MeetingBar shortenEventTitle -int 1
 defaults write leits.MeetingBar menuEventTitleLength -int 45
