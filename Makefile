@@ -30,6 +30,7 @@ macos-system-extras:
 	/bin/bash macos/amphetamine.sh
 	/bin/bash macos/touchid.sh
 	/bin/bash macos/dev-workspace.sh
+	/bin/bash macos/spotify.sh
 
 stow-macos: brew
 	is-executable stow || brew install stow

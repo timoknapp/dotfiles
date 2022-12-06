@@ -126,7 +126,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Enable F-Keys instead of fn
-defaults write NSGlobalDomain "com.apple.keyboard.fnState" -int 1
+defaults write NSGlobalDomain "com.apple.keyboard.fnState" -int 0
 
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
@@ -177,7 +177,7 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClic
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Trackpad: Increase tracking speed
-defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3.0
+defaults write NSGlobalDomain com.apple.trackpad.scaling -float 2.0
 
 # Trackpad: Haptic feedback
 # 0: Light
