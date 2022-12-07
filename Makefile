@@ -34,6 +34,9 @@ macos-system-extras:
 	/bin/bash macos/topnotch.sh
 	/bin/bash macos/iterm.sh
 	/bin/bash macos/vscode.sh
+# TODO: add Safari: extensions, bookmarks, etc.
+# TODO: add Firefox: extensions, bookmarks, etc.
+# TODO: add Edge: extensions, bookmarks, etc.
 
 stow-macos: brew
 	is-executable stow || brew install stow
