@@ -17,13 +17,13 @@ fi
 
 # Hook for extra/custom stuff
 
-DOTFILES_EXTRA_DIR="$HOME/.extra"
+# DOTFILES_EXTRA_DIR="$HOME/.extra"
 
-if [ -d "$DOTFILES_EXTRA_DIR" ]; then
-  for EXTRAFILE in "$DOTFILES_EXTRA_DIR"/runcom/*.sh; do
-    [ -f "$EXTRAFILE" ] && . "$EXTRAFILE"
-  done
-fi
+# if [ -d "$DOTFILES_EXTRA_DIR" ]; then
+#   for EXTRAFILE in "$DOTFILES_EXTRA_DIR"/runcom/*.sh; do
+#     [ -f "$EXTRAFILE" ] && . "$EXTRAFILE"
+#   done
+# fi
 
 # Clean up
 unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE

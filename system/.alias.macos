@@ -21,7 +21,7 @@ moin() {
     # open /System/Applications/Mail.app
     open /System/Applications/Calendar.app
     open /Applications/Microsoft\ Outlook.app
-    open /Applications/Microsoft\ Teams.app
+    open /Applications/Microsoft\ Teams.app --args --disable-features=HardwareMediaKeyHandling
     open /Applications/Microsoft\ Edge.app
     open /Applications/Amphetamine.app
     open /Applications/Enpass.app

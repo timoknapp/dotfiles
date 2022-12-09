@@ -25,4 +25,4 @@ if is-macos; then
 fi
 
 # Export
-export DOTFILES_DIR DOTFILES_EXTRA_DIR
+export DOTFILES_DIR #DOTFILES_EXTRA_DIR
