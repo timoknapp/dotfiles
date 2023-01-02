@@ -15,6 +15,8 @@
 	helper = osxkeychain
 [grep]
 	lineNumber = true
+[pull]
+	rebase = true
 [includeIf "gitdir:~/workspace/work/"]
     path = ~/workspace/work/.gitconfig
 [includeIf "gitdir:~/workspace/private/github/"]
