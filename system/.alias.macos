@@ -31,3 +31,15 @@ moin() {
 jwt() {
   jq -R 'split(".") | .[1] | @base64d | fromjson' <<< $1
 }
+
+# GlobalProtect vpn
+vpn-start() {
+  # launchctl unload ~/.config/vpn/com.paloaltonetworks.gp.pangps.plist
+  launchctl load ~/.config/vpn/com.paloaltonetworks.gp.pangps.plist
+  open /Applications/GlobalProtect.app
+}
+
+vpn-stop() {
+  launchctl unload ~/.config/vpn/com.paloaltonetworks.gp.pangps.plist
+  pkill GlobalProtect
+}
