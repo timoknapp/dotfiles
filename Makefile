@@ -16,7 +16,7 @@ macos: sudo core-macos packages link #mackup link
 
 core-macos: brew zsh
 
-packages: brew-packages code-packages
+packages: brew-packages code-packages sdkman
 
 macos-system: macos-dock macos-system-defaults macos-system-extras
 
@@ -63,6 +63,9 @@ unlink: stow-$(OS)
 brew:
 	/bin/bash $(DOTFILES_DIR)/install/base.sh
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+
+sdkman:
+	type -a sdk >/dev/null 2>&1 || curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 zsh: SHELLS=/private/etc/shells
 zsh: ZSH_BIN=$(HOMEBREW_PREFIX)/bin/zsh

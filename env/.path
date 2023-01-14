@@ -24,6 +24,10 @@ prepend-path "/usr/sbin"
 prepend-path "/usr/local/sbin"
 prepend-path "/opt/homebrew/sbin"
 prepend-path "/opt/homebrew/opt/openssl@3/bin"
+prepend-path "$HOME/.config/flutter/bin"
+prepend-path "$HOME/Library/Android/sdk/build-tools/*"
+prepend-path "$HOME/Library/Android/sdk/cmdline-tools/latest/bin"
+prepend-path "$HOME/Library/Android/sdk/platform-tools"
 
 
 #############################################
