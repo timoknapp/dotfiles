@@ -43,3 +43,7 @@ vpn-stop() {
   launchctl unload ~/.config/vpn/com.paloaltonetworks.gp.pangps.plist
   pkill GlobalProtect
 }
+
+# Podman
+alias pm-start="podman machine start"
+alias pm-stop="podman machine stop"
