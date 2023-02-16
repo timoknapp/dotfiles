@@ -10,6 +10,9 @@
 # 3. Try it out by toggling Do Not Disturb in MacOS
 # -----------------------------
 
+LOGGING_ENABLED=false
+DND_WATCHER_DIR="$HOME/.dotfiles/config/dndwatcher"
+
 function doNotDisturb()(
 	OS_major="$(sw_vers -productVersion | cut -d. -f1)"
 	consoleUserID="$(stat -f %u /dev/console)"
@@ -20,34 +23,31 @@ function doNotDisturb()(
 		consoleUserHomeFolder=$(dscl . -read /Users/"${consoleUser}" NFSHomeDirectory | awk -F ': ' '{print $2}')
 		file_assertions="${consoleUserHomeFolder}/Library/DoNotDisturb/DB/Assertions.json"
 
-		# echo "File Exists: $([ -f "${file_assertions}" ] && echo "exists" || echo "does not exist")" >> ~/.dotfiles/config/dndwatcher/dndwatcher.log
-		# echo "DND Status: $(grep -q "storeAssertionRecords" "${file_assertions}" 2>/dev/null && echo "ON" || echo "OFF")" >> ~/.dotfiles/config/dndwatcher/dndwatcher.log
+		# $LOGGING_ENABLED && echo "File Exists: $([ -f "${file_assertions}" ] && echo "exists" || echo "does not exist")" >> "$DND_WATCHER_DIR/dndwatcher.log"
+		# $LOGGING_ENABLED && echo "DND Status: $(grep -q "storeAssertionRecords" "${file_assertions}" 2>/dev/null && echo "ON" || echo "OFF")" >> "$DND_WATCHER_DIR/dndwatcher.log"
 		#if Assertions.json file does NOT exist, then DnD is OFF
 		[ ! -f "${file_assertions}" ] && false
 
-		# echo "$(cat "$file_assertions" && echo "showed" || echo "no show")" >> ~/.dotfiles/config/dndwatcher/dndwatcher.log
+		# $LOGGING_ENABLED && echo "$(cat "$file_assertions" && echo "showed" || echo "no show")" >> "$DND_WATCHER_DIR/dndwatcher.log"
 		#simply check for storeAssertionRecords existence, usually found at: /data/0/storeAssertionRecords (and only exists when ON)
 		grep -q "storeAssertionRecords" "${file_assertions}" 2>/dev/null && true || false
 	else
-		echo "$(date): MacOS version ($OS_major) is not supported. It is not 12 or higher." >> ~/.dotfiles/config/dndwatcher/dndwatcher.log
+		$LOGGING_ENABLED && echo "$(date): MacOS version ($OS_major) is not supported. It is not 12 or higher." >> "$DND_WATCHER_DIR/dndwatcher.log"
 		false
 	fi
 )
 if doNotDisturb; then
 	# If doNotDisturb returns 0, then DND is ON	
-  	echo "$(date): 🕵️‍♂️ Do Not Disturb is ON > Disabling Badge Icons" >> ~/.dotfiles/config/dndwatcher/dndwatcher.log
-	python3 ~/.dotfiles/config/dndwatcher/nc-prefs-util.py --disable
+  	$LOGGING_ENABLED && echo "$(date): 🕵️‍♂️ Do Not Disturb is ON > Disabling Badge Icons" >> "$DND_WATCHER_DIR/dndwatcher.log"
+	python3 $DND_WATCHER_DIR/nc-prefs-util.py --disable
 else
 	# If doNotDisturb returns 1, then DND is OFF
-  	echo "$(date): 🕵️‍♂️ Do Not Disturb is OFF > Enabling Badge Icons" >> ~/.dotfiles/config/dndwatcher/dndwatcher.log
-	python3 ~/.dotfiles/config/dndwatcher/nc-prefs-util.py --enable
-	# defaults import com.apple.ncprefs - < ~/.dotfiles/config/dndwatcher/com.apple.ncprefs.plist
-	# killall NotificationCenter && killall usernoted
-	# rm ~/.dotfiles/config/dndwatcher/com.apple.ncprefs.plist
+  	$LOGGING_ENABLED && echo "$(date): 🕵️‍♂️ Do Not Disturb is OFF > Enabling Badge Icons" >> "$DND_WATCHER_DIR/dndwatcher.log"
+	python3 $DND_WATCHER_DIR/nc-prefs-util.py --enable
 fi
-defaults import com.apple.ncprefs - < ~/.dotfiles/config/dndwatcher/com.apple.ncprefs.plist
+defaults import com.apple.ncprefs - < "$DND_WATCHER_DIR/com.apple.ncprefs.plist"
 killall NotificationCenter && killall usernoted
-rm ~/.dotfiles/config/dndwatcher/com.apple.ncprefs.plist
+rm $DND_WATCHER_DIR/com.apple.ncprefs.plist
 
 # --------- Legacy solution ---------
 
