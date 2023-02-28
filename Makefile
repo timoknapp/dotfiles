@@ -34,6 +34,7 @@ macos-system-extras:
 	/bin/bash macos/topnotch.sh
 	/bin/bash macos/iterm.sh
 	/bin/bash macos/vscode.sh
+	/bin/bash macos/do-not-disturb.sh
 # TODO: add Safari: extensions, bookmarks, etc.
 # TODO: add Firefox: extensions, bookmarks, etc.
 # TODO: add Edge: extensions, bookmarks, etc.

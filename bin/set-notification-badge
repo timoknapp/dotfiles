@@ -3,6 +3,7 @@
 # --------- IMPORTANT ---------
 # 1. Make sure that "/usr/bin/env" has full Disk access on your MacOS. Otherwhise this will not be able to read the Do Not Disturb status.
 #    MacOS System Settings > Privacy & Security > Full Disk Access > Click "+" and add /usr/bin/env
+# The following steps are performed by the `make macos-system-extras` command. But couold also be done manually as follows:
 # 2. Enable LaunchAgent to run this script when Do Not Disturb is toggled.
 # 	 - Modify config/dndwatcher/com.timoknapp.dndwatcher.plist to update the HOMEDIR_PLACEHOLDER with you /Users/username
 #    - Copy config/dndwatcher/com.timoknapp.dndwatcher.plist to ~/Library/LaunchAgents

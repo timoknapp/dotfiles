@@ -10,7 +10,7 @@
     </array>
     <key>WatchPaths</key>
     <array>
-        <string>$HOMEDIR_PLACEHOLDER/Library/DoNotDisturb/DB/Assertions.json</string>
+        <string>HOMEDIR_PLACEHOLDER/Library/DoNotDisturb/DB/Assertions.json</string>
     </array>
     <key>StandardErrorPath</key>
     <string>HOMEDIR_PLACEHOLDER/.dotfiles/config/dndwatcher/dndwatcher.log</string>
