@@ -64,6 +64,8 @@ brew "gopass"
 brew "openconnect"
 # Kubernetes CLI
 brew "kubernetes-cli"
+# Helm
+brew "helm"
 # Maven
 brew "maven"
 # Gradle
@@ -78,6 +80,8 @@ brew "hashicorp/tap/terraform"
 brew "redis"
 # podman
 brew "podman"
+# nativefier, lets you build PWAs based on websites https://github.com/nativefier/nativefier
+brew "nativefier"
 
 # Cask applications
 cask "dash"
